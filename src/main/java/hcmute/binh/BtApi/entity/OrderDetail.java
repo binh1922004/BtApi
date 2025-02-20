@@ -12,7 +12,7 @@ public class OrderDetail {
     private String id;
     private int quantity;
 
-    @OneToOne
+    @ManyToOne
     private Product product;
     @ManyToOne
     private Orders orders;
