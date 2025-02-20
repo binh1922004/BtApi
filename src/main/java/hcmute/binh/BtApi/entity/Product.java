@@ -1,5 +1,6 @@
 package hcmute.binh.BtApi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,5 +20,6 @@ public class Product {
     private LocalDate createDate;
 
     @ManyToOne
+    @JsonIgnore
     private Category category;
 }

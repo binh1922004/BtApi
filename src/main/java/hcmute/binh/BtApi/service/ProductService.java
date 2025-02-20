@@ -5,9 +5,9 @@ import hcmute.binh.BtApi.entity.Product;
 import hcmute.binh.BtApi.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Pageable;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -21,7 +21,8 @@ public class ProductService {
     }
 
     public List<Product> getTop10BestSellingProducts() {
-        return productRepository.findTop10BestSelling((Pageable) PageRequest.of(0, 10));
+        Pageable pageable = PageRequest.of(0, 10);
+        return productRepository.findTop10BestSelling(pageable);
     }
 
     public List<Product> getRecentProducts() {
